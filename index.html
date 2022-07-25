@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+	<title>IdenTV Digital Panel</title>
+	<style>
+		html {height:100%;}
+		body {margin:0; min-height: 100%; position: relative;}
+		.menuIframe, .contentIframe {width: 100%; height: 100%; border: none; }
+		/* .menuIframe {background: #ff9999; }
+		.contentIframe {background: #99ff99; } */
+
+		/* .logo_left {float: left; margin:4px}
+		.logo_right {float:right; margin:4px}
+		.menu {position: absolute; top: 50px; left: 0px; bottom: 0px; width:175px} */
+		.content {position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;}
+	</style>
+	<script>
+		if (window.__adobe_cep__) window.require = require || cep_node.require;
+	</script>
+	<!-- <script src="js/libs/CSInterface.js"></script> -->
+	<!-- <script type="text/javascript" src="js/JQuery/jquery.js"></script> -->
+	<!-- <script src="js/main.js"></script> -->
+	<!-- <script>
+		/**
+			 * Initialize CSInterface
+			 */
+	  var CSLibrary = new CSInterface();
+	  
+
+	  function isNodeJSEnabled() {		
+		  if (typeof(cep_node) !== 'undefined') {
+			  //if require and process is available, it should be mixed context
+			  if ((typeof(require) !== 'undefined') && (typeof(process) !== 'undefined')) {
+				  $('#result').val("Node.js is enabled with mixed-context mode");
+			  }
+			  else
+			  {
+			  $('#result').val("Node.js is enabled");
+			  }
+		  } 
+		  else {
+			  $('#result').val("Node.js is disabled");
+		  }
+	  }
+	  async function importInPremiere ({ url, name }) {
+
+		  isNodeJSEnabled()
+		  /**
+		   * Create temporary directory
+		   */
+		//   const tempFolder = 'C:/Users/bobmi/Downloads/IdenTVVideos'
+		  const tempFolder = '/Users/prakash/Downloads/IdenTVVideos'
+
+		//   const fs = window.require('fs')
+			const fs = window.cep_node.require('fs')
+          
+			if (fs !== "undefined") {
+		  		$('#result').val("fs object created!")
+			} else {
+				$('#result').val("fs object unavailable!")
+			}
+		//   fs.makedir(tempFolder)
+			window.cep.fs.makedir(tempFolder)
+		  $('#result').val(tempFolder)
+
+		  const filePath = `${tempFolder}/${name}`
+		  $('#result').val(filePath)
+		  /**
+		   * Open file
+		   */
+		  // const fs = cep_node.require('fs')
+
+		  $('#result').val(url)
+
+		  const file = fs.createWriteStream(filePath)
+
+		  /**
+		   * Fetch ressource as stream
+		   */
+		  const response = await fetch(url)
+
+		  const reader = response.body.getReader()
+
+		  while (true) {
+			  /**
+			   * Read stream chunks
+			   */
+			  const { value, done } = await reader.read()
+
+			  if (done) {
+				$('#result').val("success! "+filePath)
+				/**
+				 * Close file
+				 */
+				file.end()
+				$('#result').val("fileClosed! "+filePath)
+				/**
+				 * Send file path to JSX for import into Premiere
+				 */
+				 CSLibrary.evalScript(`importFile("${filePath}")`)
+				// if (app !== "undefined") {
+				// 	$('#result').val("app Object available!")
+				// } else {
+				// 	$('#result').val("app Object not defined!")
+				// }
+				// app.project.importFiles([filePath],
+			 	// 						 false, // suppress warnings 
+			  	// 						 app.project.getInsertionBin(),
+			  	// 						 false); // import as numbered stills
+				// importFile(filePath)
+				$('#result').val("importFile! "+filePath)
+				break
+			  }
+
+			  /**
+			   * Write stream chunks to file
+			   */
+			  file.write(value)
+			  $('#result').val("writing value")
+		  }
+	  }
+  	</script> -->
+</head>
+
+	<!-- <div class="menu">
+		<div>
+			<table class="resultTable">
+				<tr>
+					<td><label for="result">Result:</label></td>
+					<td><textarea id="result" name="result" class="result" readonly="readonly" ></textarea></td>
+				</tr>
+			</table>
+		</div>
+		<button name="import" onclick="importInPremiere({url:'https\:\/\/identv-precision-visual-data.s3.amazonaws.com/6245b16c249b99006d833a1d/7082627018415705349.mp4?AWSAccessKeyId=AKIA4GZ224W5WLEQWJGE&Expires=1658571719&Signature=szc%2BEEWEo9XZJiHWmvjaMNOfF3c%3D',name:'cooltest8.mp4'})">import</button>
+	</div> -->
+		<!-- <button name="import" onclick="importInPremiere({url:'https\:\/\/identv-precision-visual-data.s3.amazonaws.com/6245b16c249b99006d833a1d/13.mp4?AWSAccessKeyId=AKIA4GZ224W5WLEQWJGE&Expires=1658255407&Signature=dlYXl2KLZfSYa92B8Yo5ZSTr1Pg%3D',name:'cooltest'})">Import</button></div> -->
+	<div class="content"><iframe class="contentIframe" src="https://identv-publishing-dashboard.fs.dev.identv.com/dashboard/pixsee"></iframe></div>
+</body>
+</html>
