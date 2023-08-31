@@ -1,21 +1,28 @@
 **IDENTV PIXSEE ADOBE PREMIERE EXTENSION**
 
 Main URL: https://identv-publishing-dashboard.pixsee.identv.com/dashboard/pixsee
+
 Staging URL: https://identv-publishing-dashboard.fs.dev.identv.com/dashboard/pixsee
 
+
 Download the desired zip file, extract and copy to Extension Folder on your device.
+
 
 Extension Folders
 
 1. System extension folder
 
 Win(x64): C:\Program Files (x86)\Common Files\Adobe\CEP\extensions, and C:\Program Files\Common Files\Adobe\CEP\extensions (since CEP 6.1)
+
 macOS: /Library/Application Support/Adobe/CEP/extensions
+
 
 2. Per-user extension folder
 
 Win: C:\Users\<USERNAME>\AppData\Roaming\Adobe\CEP/extensions
+
 macOS: ~/Library/Application Support/Adobe/CEP/extensions
+
 
 How does CEP decide which extension to load?
 
