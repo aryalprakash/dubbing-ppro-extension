@@ -49,5 +49,5 @@ defaults write /Users/<username>/Library/Preferences/com.adobe.CSXS.11.plist Pla
 
 On Windows, make the following registry entry (a new Key, of type String):
 
-![Registry image](payloads/Registry.png)
+![Registry image](Registry.png)
 
