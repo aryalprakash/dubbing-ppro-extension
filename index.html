@@ -3,16 +3,27 @@
 <head>
 	<title>IdenTV Digital Panel</title>
 	<style>
-		html {height:100%;}
-		body {margin:0; min-height: 100%; position: relative;}
-		.menuIframe, .contentIframe {width: 100%; height: 100%; border: none; }
-		.content {position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;}
+		html {
+			height: 100%;
+		}
+		body {
+			margin: 0;
+			height: 100%;
+			width: 100%;
+			position: relative;
+		}
 	</style>
 	<script>
 		if (window.__adobe_cep__) window.require = require || cep_node.require;
+		function onLoaded() {
+			window.location.href = "http://localhost:3000/dashboard/pixsee";
+			// window.location.href = "https://identv-publishing-dashboard.pixsee.identv.com/dashboard/pixsee";
+			// window.location.href = "https://identv-publishing-dashboard.fs.dev.identv.com/dashboard/pixsee";
+		}
 	</script>
 </head>
-	<!-- <div class="content"><iframe class="contentIframe" src="https://identv-publishing-dashboard.pixsee.identv.com/dashboard/pixsee"></iframe></div> -->
-	<div class="content"><iframe class="contentIframe" src="https://identv-publishing-dashboard.fs.dev.identv.com/dashboard/pixsee"></iframe></div>
+
+<body onLoad="onLoaded()">
 </body>
+
 </html>
