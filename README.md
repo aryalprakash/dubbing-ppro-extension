@@ -2,7 +2,7 @@
 
 Main URL: https://apptek-dubbing-studio.vercel.app/
 
-Download the desired zip file, extract and copy to Extension Folder on your device.
+Download the [extension zip file](https://github.com/aryalprakash/dubbing-ppro-extension/raw/refs/heads/main/Apptek%20Dubbing%20Ppro.zip), extract and copy to Extension Folder on your device.
 
 ### Extension Folders
 
