@@ -1,28 +1,22 @@
-**IDENTV PIXSEE ADOBE PREMIERE EXTENSION**
+**APPTEK DUBBING STUDIO ADOBE PREMIERE EXTENSION**
 
-Main URL: https://identv-publishing-dashboard.pixsee.identv.com/dashboard/pixsee
-
-Staging URL: https://identv-publishing-dashboard.fs.dev.identv.com/dashboard/pixsee
-
+Main URL: https://apptek-dubbing-studio.vercel.app/
 
 Download the desired zip file, extract and copy to Extension Folder on your device.
-
 
 ### Extension Folders
 
 1. System extension folder
 
-Win(x64): `C:\Program Files (x86)\Common Files\Adobe\CEP\extensions` and  `C:\Program Files\Common Files\Adobe\CEP\extensions` (since CEP 6.1)
+Win(x64): `C:\Program Files (x86)\Common Files\Adobe\CEP\extensions` and `C:\Program Files\Common Files\Adobe\CEP\extensions` (since CEP 6.1)
 
 macOS: `/Library/Application Support/Adobe/CEP/extensions`
-
 
 2. Per-user extension folder
 
 Win: `C:\Users\<USERNAME>\AppData\Roaming\Adobe\CEP/extensions`
 
 macOS: `~/Library/Application Support/Adobe/CEP/extensions`
-
 
 How does CEP decide which extension to load?
 
@@ -32,22 +26,22 @@ How does CEP decide which extension to load?
 - If two extensions have same extension bundle ID and same version, the one whose manifest file has latest modification date is loaded.
 - If two extensions have same extension bundle ID, same version and same manifest modification date, CEP loads the first one that is found.
 
-
-###  Enable loading of unsigned panels
+### Enable loading of unsigned panels
 
 Further [relevant information](https://medium.com/adobetech/how-to-create-your-first-adobe-panel-in-6-easy-steps-f8bd4ed5778) is available from the Extensibility team.
 
-*Note: Premiere Pro 23.x integrates CEP11, so even if you had unsigned panels
-loading before (up to CEP10), you'll need to perform this step again, but for key CSXS.11.*
+_Note: Premiere Pro 23.x integrates CEP11, so even if you had unsigned panels
+loading before (up to CEP10), you'll need to perform this step again, but for key CSXS.11._
 
 On MacOS, type the following into Terminal, then relaunch Finder (either via
 rebooting, or from the Force Quit dialog):
 
 ```html
-defaults write /Users/<username>/Library/Preferences/com.adobe.CSXS.11.plist PlayerDebugMode 1
+defaults write /Users/<username
+  >/Library/Preferences/com.adobe.CSXS.11.plist PlayerDebugMode 1</username
+>
 ```
 
 On Windows, make the following registry entry (a new Key, of type String):
 
 ![Registry image](Registry.png)
-

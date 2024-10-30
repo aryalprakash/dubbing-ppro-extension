@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExtensionList>
-    <Extension Id="com.extension.pixsee">
+    <Extension Id="com.extension.apptek.dubbing">
         <HostList>
-            <Host Name="PPRO" Port="8077"/>
+            <Host Name="PPRO" Port="7078"/>
             <Host Name="AEFT" Port="8077"/>
         </HostList>
     </Extension>

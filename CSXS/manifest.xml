@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExtensionManifest
 	Version="5.0"
-	ExtensionBundleId="com.extension.pixsee"
+	ExtensionBundleId="com.extension.apptek.dubbing"
 	ExtensionBundleVersion="1.0.0"
-	ExtensionBundleName="IdenTV PixSee"
+	ExtensionBundleName="Apptek Dubbing Studio"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<ExtensionList>
-		<Extension Id="com.extension.pixsee" Version="1.0" />
+		<Extension Id="com.extension.apptek.dubbing" Version="1.0" />
 	</ExtensionList>
 
 	<ExecutionEnvironment>
@@ -26,7 +26,7 @@
 </ExecutionEnvironment>
 
 	<DispatchInfoList>
-		<Extension Id="com.extension.pixsee">
+		<Extension Id="com.extension.apptek.dubbing">
 			<DispatchInfo>
 
 			<Resources>
@@ -47,7 +47,7 @@
 			<UI>
 
 				<Type>Panel</Type>
-				<Menu>IdenTV PixSee</Menu>
+				<Menu>Apptek Dubbing Studio</Menu>
 
 				<Geometry>
 					<Size>
