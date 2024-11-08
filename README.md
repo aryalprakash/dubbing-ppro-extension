@@ -37,9 +37,7 @@ On MacOS, type the following into Terminal, then relaunch Finder (either via
 rebooting, or from the Force Quit dialog):
 
 ```html
-defaults write /Users/<username
-  >/Library/Preferences/com.adobe.CSXS.11.plist PlayerDebugMode 1</username
->
+defaults write com.adobe.CSXS.11.plist PlayerDebugMode 1
 ```
 
 On Windows, make the following registry entry (a new Key, of type String):
